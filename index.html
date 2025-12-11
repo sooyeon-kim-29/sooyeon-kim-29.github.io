@@ -14,16 +14,41 @@
             color: #333;
         }
 
-        .profile-photo {
-            width: 200px;              /* adjust size */
-            height: 200px;
-            object-fit: cover;         /* keeps proper crop */
-            border-radius: 12px;       /* slight rounding; set to 0px for perfect square */
-            display: block;
-            margin: 0 auto 25px auto;  /* center photo */
-            border: 4px solid #2a4d9b; /* frame color */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-        }
+        /* Two-column layout for the Home section */
+.home-wrapper {
+    display: flex;
+    align-items: center;          /* vertical alignment */
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.home-text {
+    flex: 1;
+}
+
+.home-photo {
+    width: 320px;                 /* adjust SIZE of rectangular photo */
+    height: 420px;                /* adjust HEIGHT */
+    object-fit: cover;
+    border-radius: 0px;          /* soften corners; set 0px for sharp corners */
+    border: 4px solid #2a4d9b;    /* frame color */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Responsive layout on small screens */
+@media (max-width: 800px) {
+    .home-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .home-photo {
+        width: 80%;
+        height: auto;
+    }
+}
+
 
         /* Navigation Bar */
         nav {
@@ -112,16 +137,28 @@
 
         <!-- HOME -->
         <section id="home">
-            <img src="sooyeonkim.jpg" alt="Soo-Yeon Kim Photo" class="profile-photo">
+    <div class="home-wrapper">
+
+        <!-- LEFT SIDE: TEXT -->
+        <div class="home-text">
             <h1>Hello! I'm Soo-Yeon 👋</h1>
             <p>
                 I am a PhD candidate in Environmental Health Sciences at George Washington University. 
                 My work focuses on air pollution exposure assessment, environmental justice, and estimating 
-                the health burdens associated with NO₂, PM₂.₅, and ozone. I integrate satellite-based exposure 
-                models, geospatial analytics, and epidemiological methods to understand how environmental 
-                risks are distributed and how they affect health across different communities.
+                the health burdens associated with NO₂, PM₂.₅, and ozone.
             </p>
-        </section>
+            <p>
+                I integrate satellite-based exposure models, geospatial analytics, and epidemiological 
+                methods to understand how environmental risks are distributed and how they affect communities.
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE: PHOTO -->
+        <img src="sooyeon.jpg" alt="Soo-Yeon Kim Photo" class="home-photo">
+
+    </div>
+</section>
+
 
         <!-- ABOUT -->
         <section id="about">
