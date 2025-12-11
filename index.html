@@ -130,6 +130,19 @@
             text-align: center;
             width: 90%;                   /* prevents clipping on narrow screens */
         }
+        
+        /* Mobile adjustments for nav text */
+        @media (max-width: 600px) {
+            .hero-nav a {
+                font-size: 0.75rem;   /* smaller text */
+                letter-spacing: 0.3px;
+                padding: 0 4px;       /* tighter spacing between items */
+            }
+        
+            .hero-nav ul {
+                gap: 10px;           /* reduce spacing between tabs */
+            }
+        }
 
         /* =======================
            MAIN CONTENT CONTAINER
