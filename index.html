@@ -202,6 +202,27 @@
                 margin: 0 auto;
             }
         }
+
+        .contact-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        }
+    
+    .contact-photo {
+        width: 130px;               /* adjust size */
+        height: 130px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+    @media (max-width: 800px) {
+        .contact-wrapper {
+            flex-direction: column;
+            text-align: center;
+            }
+        }
     </style>
 
 </head>
@@ -428,11 +449,22 @@
 
     <!-- CONTACT -->
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:sooyeonkim@gwu.edu">sooyeonkim@gwu.edu</a></p>
-        <p>Google Scholar: <a href="https://scholar.google.com/citations?user=ywFEkUYAAAAJ&hl=en" target="_blank">View Profile</a></p>
-        <p>GitHub: <a href="https://github.com/sooyeon-kim-29" target="_blank">github.com/sooyeon-kim-29</a></p>
-    </section>
+    <h2>Contact</h2>
+
+    <div class="contact-wrapper">
+
+        <!-- LEFT SIDE: PHOTO -->
+        <img src="Coally.jpeg" alt="Coally" class="contact-photo">
+
+        <!-- RIGHT SIDE: CONTACT DETAILS -->
+        <div>
+            <p>Email: <a href="mailto:sooyeonkim@gwu.edu">sooyeonkim@gwu.edu</a></p>
+            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=ywFEkUYAAAAJ&hl=en" target="_blank">View Profile</a></p>
+            <p>GitHub: <a href="https://github.com/sooyeon-kim-29" target="_blank">github.com/sooyeon-kim-29</a></p>
+        </div>
+
+    </div>
+</section>
 
 </div>
 
