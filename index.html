@@ -207,14 +207,17 @@
         }
 
         @media (max-width: 800px) {
-            .research-wrapper {
-                flex-direction: column;
-                text-align: center;
-            }
-            .research-photo {
-                width: 90%;
-                margin: 0 auto;
-            }
+        .research-photo {
+            float: none !important;     /* stop floating */
+            display: block;
+            margin: 0 auto 20px auto;   /* center the image */
+            width: 80%;                 /* responsive size */
+        }
+    
+        .research-text {
+            display: block;
+            width: 100%;
+        }
         }
 
         .contact-wrapper {
