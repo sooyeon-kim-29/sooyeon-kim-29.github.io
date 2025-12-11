@@ -8,20 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+        /* =======================
+           GLOBAL COLOR VARIABLES
+           ======================= */
         :root {
-    --navy-dark: #0A1A3C;
-    --navy-medium: #1F3161;
-    --navy-accent: #3F6BAA;
-    --navy-light-bg: #F2F4F8;
-}
-        .site-banner img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        max-height: 350px; /* adjust height */
-        display: block;
-    }
-        
+            --navy-dark: #0A1A3C;
+            --navy-medium: #1F3161;
+            --navy-accent: #3F6BAA;
+            --navy-light-bg: #F2F4F8;
+        }
+
+        /* =======================
+           BASE STYLING
+           ======================= */
         body {
             margin: 0;
             font-family: 'Lora', serif;
@@ -29,63 +28,155 @@
             line-height: 1.6;
             color: #333;
         }
-        
-                /* Two-column layout for the Home section */
+
+        h1, h2, h3 {
+            color: var(--navy-medium);
+            font-family: 'Lora', serif;
+        }
+
+        section { margin-bottom: 60px; }
+
+        a { color: var(--navy-medium); }
+        a:hover { color: var(--navy-accent); }
+
+        ul { margin-top: 10px; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+
+        /* =======================
+           HERO BANNER WITH NAVIGATION
+           ======================= */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 330px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(55%);
+        }
+
+        /* NAVIGATION OVER HERO */
+        .hero-nav {
+            position: absolute;
+            top: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .hero-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-nav a {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .hero-nav a:hover {
+            color: var(--navy-accent);
+        }
+
+        /* CENTERED TEXT OVER IMAGE */
+        .hero-text {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 1.9rem;
+            font-weight: 700;
+            text-shadow: 0px 4px 10px rgba(0,0,0,0.65);
+        }
+
+
+        /* =======================
+           MAIN CONTENT CONTAINER
+           ======================= */
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =======================
+           HOME — TWO-COLUMN LAYOUT
+           ======================= */
         .home-wrapper {
             display: flex;
-            align-items: center;          /* vertical alignment */
+            align-items: center;
             justify-content: space-between;
             gap: 40px;
             margin-bottom: 60px;
         }
-        
-        .home-text {
-            flex: 1;
-        }
-        
+
+        .home-text { flex: 1; }
+
         .home-photo {
-            width: 320px;                 /* adjust SIZE of rectangular photo */
-            height: 320px;                /* adjust HEIGHT */
+            width: 320px;
+            height: 320px;
             object-fit: cover;
-            border-radius: 0px;          /* soften corners; set 0px for sharp corners */
-            border: 0px solid #2a4d9b;    /* frame color */
+            border-radius: 0px;
+            border: 0px solid var(--navy-medium);
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
-        
-        /* Responsive layout on small screens */
+
         @media (max-width: 800px) {
             .home-wrapper {
                 flex-direction: column;
                 text-align: center;
             }
-            
             .home-photo {
                 width: 80%;
                 height: auto;
             }
         }
-        
+
+
+        /* =======================
+           RESEARCH SECTION LAYOUT
+           ======================= */
         .research-wrapper {
             display: flex;
             align-items: flex-start;
             gap: 40px;
             margin-bottom: 60px;
         }
-        
-        .research-text {
-            flex: 1;
-        }
-        
+
+        .research-text { flex: 1; }
+
         .research-photo {
-            width: 350px;        /* adjust size */
+            width: 350px;
             height: auto;
-            border-radius: 0px; 
-            border: 0px solid #2a4d9b;
+            border-radius: 0px;
+            border: 0px solid var(--navy-medium);
             box-shadow: 0 4px 12px rgba(0,0,0,0.12);
             object-fit: cover;
         }
-        
-        /* Mobile responsive layout */
+
         @media (max-width: 800px) {
             .research-wrapper {
                 flex-direction: column;
@@ -96,78 +187,20 @@
                 margin: 0 auto;
             }
         }
-
-        /* Navigation Bar */
-        nav {
-            background: var(--navy-dark);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        nav ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-        }
-
-        nav a:hover {
-            color: var(--navy-accent);
-        }
-
-        /* Layout container */
-        .container {
-            max-width: 850px;
-            margin: 50px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        h1, h2, h3 {
-            color: var(--navy-medium);
-            font-family: 'Lora', serif;
-        }
-        
-        section {
-            margin-bottom: 60px;
-        }
-
-        ul {
-            margin-top: 10px;
-        }
-
-        a {
-            color: #2a4d9b;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9rem;
-        }
     </style>
+
 </head>
 
 <body>
-<header class="site-banner">
+
+<!-- =======================
+     HERO BANNER
+     ======================= -->
+<header class="hero">
     <img src="banner_photo.jpg" alt="Environmental Health Research Banner">
-</header>
-    <!-- Navigation -->
-    <nav>
+
+    <!-- NAVIGATION INSIDE BANNER -->
+    <nav class="hero-nav">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -178,180 +211,202 @@
         </ul>
     </nav>
 
-    <!-- Main content -->
-    <div class="container">
+    <!-- CENTERED TEXT -->
+    <div class="hero-text">
+        Soo-Yeon Kim, PhD candidate, MPH, BS
+    </div>
+</header>
 
-        <!-- HOME -->
-        <section id="home">
-    <div class="home-wrapper">
 
-        <!-- LEFT SIDE: TEXT -->
-        <div class="home-text">
-            <h1>Hello! I'm Soo-Yeon 👋</h1>
-            <p>
-                I am a PhD candidate in Environmental Health Sciences at George Washington University. 
-                My work focuses on air pollution exposure assessment, environmental justice, and estimating 
-                the health burdens associated with NO₂, PM₂.₅, and ozone.
-            </p>
-            <p>
-                I integrate satellite-based exposure models, geospatial analytics, and epidemiological 
-                methods to understand how environmental risks are distributed and how they affect communities.
-            </p>
+
+<!-- =======================
+     MAIN CONTENT
+     ======================= -->
+<div class="container">
+
+    <!-- HOME -->
+    <section id="home">
+        <div class="home-wrapper">
+
+            <!-- LEFT SIDE TEXT -->
+            <div class="home-text">
+                <h1>Hello! I'm Soo-Yeon 👋</h1>
+                <p>
+                    I am a PhD candidate in Environmental Health Sciences at George Washington University. 
+                    My work focuses on air pollution exposure assessment, environmental justice, and estimating 
+                    the health burdens associated with NO₂, PM₂.₅, and ozone.
+                </p>
+                <p>
+                    I integrate satellite-based exposure models, geospatial analytics, and epidemiological 
+                    methods to understand how environmental risks are distributed and how they affect communities.
+                </p>
+            </div>
+
+            <!-- RIGHT SIDE PHOTO -->
+            <img src="sooyeonkim.jpg" alt="Soo-Yeon Kim Photo" class="home-photo">
+
         </div>
-
-        <!-- RIGHT SIDE: PHOTO -->
-        <img src="sooyeonkim.jpg" alt="Soo-Yeon Kim Photo" class="home-photo">
-
-    </div>
-</section>
+    </section>
 
 
-        <!-- ABOUT -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                My research centers on quantifying disparities in exposure to air pollution and understanding 
-                their impacts on population health. I work with high-resolution datasets, pollutant modeling 
-                frameworks, and large-scale health burden estimation tools to provide evidence that can support 
-                equitable environmental policy and improve public health outcomes globally.
-            </p>
 
-            <p>
-                I am particularly interested in:
-            </p>
-            <ul>
-                <li>Air pollution exposure modeling (NO₂, PM₂.₅, O₃)</li>
-                <li>Environmental justice and inequality assessment</li>
-                <li>Health burden estimation using GBD frameworks</li>
-                <li>Spatial epidemiology and geospatial data science</li>
-            </ul>
-        </section>
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            My research centers on quantifying disparities in exposure to air pollution and understanding 
+            their impacts on population health. I work with high-resolution datasets, pollutant modeling 
+            frameworks, and large-scale health burden estimation tools to provide evidence that can support 
+            equitable environmental policy and improve public health outcomes globally.
+        </p>
 
-        <!-- RESEARCH -->
-        <section id="research">
-    <h2>Research</h2>
+        <p>
+            I am particularly interested in:
+        </p>
+        <ul>
+            <li>Air pollution exposure modeling (NO₂, PM₂.₅, O₃)</li>
+            <li>Environmental justice and inequality assessment</li>
+            <li>Health burden estimation using GBD frameworks</li>
+            <li>Spatial epidemiology and geospatial data science</li>
+        </ul>
+    </section>
 
-    <div class="research-wrapper">
-        
-        <!-- LEFT SIDE: PHOTO -->
-        <img src="research_photo.jpg" 
-             alt="Research Photo"
-             class="research-photo">
 
-        <!-- RIGHT SIDE: TEXT -->
-        <div class="research-text">
-            <p>
-                My research focuses on air quality modeling, exposure assessment, and understanding 
-                disparities in environmental health risks. I work with satellite data, high-resolution 
-                pollution models, and geospatial analytics to evaluate how exposures vary across 
-                communities and how these translate into health burdens.
-            </p>
 
-            <ul>
-                <li><b>Disparities in NO₂ exposure and mortality burdens</b> in U.S. census tracts (2019–2024)</li>
-                <li><b>Global air pollution & CO₂ emissions analysis</b> across 13,189 cities</li>
-                <li><b>Machine-learning models</b> for satellite-based NO₂ & PM₂.₅ exposure prediction</li>
-                <li><b>Joint exposure modeling</b> for extreme heat and PM₂.₅</li>
-            </ul>
+    <!-- RESEARCH -->
+    <section id="research">
+        <h2>Research</h2>
+
+        <div class="research-wrapper">
+
+            <!-- LEFT SIDE PHOTO -->
+            <img src="research_photo.jpg" alt="Research Photo" class="research-photo">
+
+            <!-- RIGHT SIDE TEXT -->
+            <div class="research-text">
+                <p>
+                    My research focuses on air quality modeling, exposure assessment, and understanding 
+                    disparities in environmental health risks. I work with satellite data, high-resolution 
+                    pollution models, and geospatial analytics to evaluate how exposures vary across 
+                    communities and how these translate into health burdens.
+                </p>
+
+                <ul>
+                    <li><b>Disparities in NO₂ exposure and mortality burdens</b> in U.S. census tracts (2019–2024)</li>
+                    <li><b>Global air pollution & CO₂ emissions analysis</b> across 13,189 cities</li>
+                    <li><b>Machine-learning models</b> for satellite-based NO₂ & PM₂.₅ exposure prediction</li>
+                    <li><b>Joint exposure modeling</b> for extreme heat and PM₂.₅</li>
+                </ul>
+            </div>
+
         </div>
-
-    </div>
-</section>
-
-        <!-- PUBLICATIONS -->
-        <section id="publications">
-    <h2>Publications</h2>
-
-    <h3>Manuscripts in Preparation</h3>
-    <ul>
-        <li>
-            <b>Kim, S. Y.</b>, Kerr, G. H., Nawaz, O., Anenberg, S. C. 
-            <i>Spatiotemporal Trends and Disparities in NO₂ Exposure and Attributable Mortality in U.S. Census Tracts (2019–2024).</i> In preparation.
-        </li>
-
-        <li>
-            <b>Kim, S. Y.</b>, Kerr, G. H., Anenberg, S. C. 
-            <i>Associations between city-level socioeconomic status and urban air pollution-related disease burdens across 13,000 cities worldwide.</i> In preparation.
-        </li>
-
-        <li>
-            Seo, J., Byun, G., <b>Kim, S. Y.</b>, Weon, S., Bell, M. L. 
-            <i>Air Quality Changes During the Paris 2024 Olympics: Impacts, Interventions, and Global Comparisons.</i> In preparation.
-        </li>
-
-        <li>
-            Kerr, G. H., Amegah, K., Chen, L., Crooks, J., Shindell, D., Vorha, K., Akritidis, D., 
-            Anenberg, S. C., Carleston, C., Lacey, F., <b>Kim, S. Y.</b>, Lin, J., Nawaz, M. O., Pant, P., 
-            Pozzer, A., von Schneidemesser, E., Turnock, S., Wang, S., West, J. J., YingYing, Y.
-            <i>Tropospheric Ozone Assessment Report II: Ozone trends, population exposure, and health impacts.</i> In preparation.
-        </li>
-
-        <li>
-            Zimmer, A., Kerr, G. H., <b>Kim, S. Y.</b>, Anenberg, S. C., Tuholske, C.
-            <i>Changing urban demographic exposure to extreme heat and air pollution.</i> In preparation.
-        </li>
-    </ul>
-
-    <h3>Peer-Reviewed Publications</h3>
-    <ul>
-        <li>
-            <b>Kim, S. Y.</b>, Kerr, G. H., van Donkelaar, A., Martin, R. V., West, J. J., Anenberg, S. C. (2025). 
-            <i>Tracking air pollution and CO₂ emissions in 13,189 urban areas worldwide using large geospatial datasets.</i> 
-            <b>Communications Earth & Environment, 6, 311.</b>  
-            <a href="https://www.nature.com/articles/s43247-025-02270-9" target="_blank">https://doi.org/10.1038/s43247-025-01486-6</a>
-        </li>
-
-        <li>
-            Byun, G., Choi, Y., Foo, D., Stewart, R., Song, Y., Son, J. Y., <b>Kim, S. Y.</b>, ... Bell, M. L. (2024).  
-            <i>Effects of ambient temperature on mental and neurological conditions in older adults: A systematic review and meta-analysis.</i>  
-            <b>Environment International, 109166.</b>  
-            <a href="https://doi.org/10.1016/j.envint.2024.109166" target="_blank">https://doi.org/10.1016/j.envint.2024.109166</a>
-        </li>
-
-        <li>
-            <b>Kim, S. Y.</b>, Kim, H., & Lee, J. T. (2020). 
-            <i>Health Effects of Air-Quality Regulations in Seoul Metropolitan Area: Applying Synthetic Control Method to Controlled-Interrupted Time-Series Analysis.</i>  
-            <b>Atmosphere, 11(8), 868.</b>  
-            <a href="https://doi.org/10.3390/atmos11080868" target="_blank">https://doi.org/10.3390/atmos11080868</a>
-        </li>
-
-        <li>
-            Byun, G., <b>Kim, S.</b>, <b>Kim, S. Y.</b>, Park, D., Shin, M. J., Oh, H., & Lee, J. T. (2020).  
-            <i>Blood Lead Concentrations and Mortality in Korean Adults: The Korea National Health and Nutrition Examination Survey with Mortality Follow-Up.</i>  
-            <b>International Journal of Environmental Research and Public Health, 17(18), 6898.</b>  
-            <a href="https://doi.org/10.3390/ijerph17186898" target="_blank">https://doi.org/10.3390/ijerph17186898</a>
-        </li>
-
-        <li>
-            Kim, H., Byun, G., Choi, Y., <b>Kim, S.</b>, <b>Kim, S. Y.</b>, & Lee, J. T. (2020).  
-            <i>Effects of long-term exposure to air pollution on all-cause mortality and cause-specific mortality in seven major cities of South Korea.</i>  
-            <b>Environmental Research, 110290.</b>  
-            <a href="https://doi.org/10.1016/j.envres.2020.110290" target="_blank">https://doi.org/10.1016/j.envres.2020.110290</a>
-        </li>
-    </ul>
-</section>
+    </section>
 
 
-        <!-- CV -->
-        <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <p>You can download my CV here:</p>
-            <p><a href="CV_Soo-Yeon Kim_Dec2025.pdf" target="_blank">Download CV (PDF)</a></p>
-        </section>
 
-        <!-- CONTACT -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:sooyeonkim@gwu.edu">sooyeonkim@gwu.edu</a></p>
-            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=ywFEkUYAAAAJ&hl=en&oi=ao" target="_blank">View Profile</a></p>
-            <p>GitHub: <a href="https://github.com/sooyeon-kim-29" target="_blank">github.com/sooyeon-kim-29</a></p>
-        </section>
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+        <h2>Publications</h2>
 
-    </div>
+        <h3>Manuscripts in Preparation</h3>
+        <ul>
+            <li>
+                <b>Kim, S. Y.</b>, Kerr, G. H., Nawaz, O。, Anenberg, S. C.  
+                <i>Spatiotemporal Trends and Disparities in NO₂ Exposure and Attributable Mortality in U.S. Census Tracts (2019–2024).</i>  
+                In preparation.
+            </li>
 
-    <footer>
-        © 2025 Soo-Yeon Kim — Environmental Health Research
-    </footer>
+            <li>
+                <b>Kim, S. Y.</b>, Kerr, G. H., Anenberg, S. C.  
+                <i>Associations between city-level socioeconomic status and urban air pollution-related disease burdens across 13,000 cities worldwide.</i>  
+                In preparation.
+            </li>
+
+            <li>
+                Seo, J., Byun, G., <b>Kim, S. Y.</b>, Weon, S., Bell, M. L.  
+                <i>Air Quality Changes During the Paris 2024 Olympics: Impacts, Interventions, and Global Comparisons.</i>  
+                In preparation.
+            </li>
+
+            <li>
+                Kerr, G. H., Amegah, K., Chen, L., Crooks, J., Shindell, D., Vorha, K., Akritidis, D., 
+                Anenberg, S. C., Carleston, C., Lacey, F., <b>Kim, S. Y.</b>, Lin, J., Nawaz, M. O., Pant, P., 
+                Pozzer, A。, von Schneidemesser, E., Turnock, S., Wang, S., West, J. J., YingYing, Y.  
+                <i>Tropospheric Ozone Assessment Report II: Ozone trends, population exposure, and health impacts.</i>  
+                In preparation.
+            </li>
+
+            <li>
+                Zimmer, A。, Kerr, G. H。, <b>Kim, S. Y。</b>, Anenberg, S. C。, Tuholske, C。  
+                <i>Changing urban demographic exposure to extreme heat and air pollution.</i>  
+                In preparation.
+            </li>
+        </ul>
+
+        <h3>Peer-Reviewed Publications</h3>
+        <ul>
+            <li>
+                <b>Kim, S. Y。</b>, Kerr, G. H。, van Donkelaar, A。, Martin, R。V。, West, J。J。, Anenberg, S。C。 (2025).  
+                <i>Tracking air pollution and CO₂ emissions in 13,189 urban areas worldwide using large geospatial datasets.</i>  
+                <b>Communications Earth & Environment, 6, 311。</b>  
+                <a href="https://doi.org/10.1038/s43247-025-01486-6" target="_blank">https://doi.org/10.1038/s43247-025-01486-6</a>
+            </li>
+
+            <li>
+                Byun, G。, Choi, Y。, Foo, D。, Stewart, R。, Song, Y。, Son, J。Y。, <b>Kim, S。Y。</b>, … Bell, M。L。 (2024)。  
+                <i>Effects of ambient temperature on mental and neurological conditions in older adults: A systematic review and meta-analysis。</i>  
+                <b>Environment International, 109166。</b>  
+                <a href="https://doi.org/10.1016/j.envint.2024.109166" target="_blank">https://doi.org/10.1016/j.envint.2024.109166</a>
+            </li>
+
+            <li>
+                <b>Kim, S。Y。</b>, Kim, H。, & Lee, J。T。 (2020)。  
+                <i>Health Effects of Air-Quality Regulations in Seoul Metropolitan Area: Applying Synthetic Control Method to Controlled-Interrupted Time-Series Analysis。</i>  
+                <b>Atmosphere, 11(8), 868。</b>  
+                <a href="https://doi.org/10.3390/atmos11080868" target="_blank">https://doi.org/10.3390/atmos11080868</a>
+            </li>
+
+            <li>
+                Byun, G。, <b>Kim, S。</b>, <b>Kim, S。Y。</b>, Park, D。, Shin, M。J。, Oh, H。, & Lee, J。T。, (2020)。  
+                <i>Blood Lead Concentrations and Mortality in Korean Adults: The Korea National Health and Nutrition Examination Survey with Mortality Follow-Up。</i>  
+                <b>International Journal of Environmental Research and Public Health, 17(18), 6898。</b>  
+                <a href="https://doi.org/10.3390/ijerph17186898" target="_blank">https://doi.org/10.3390/ijerph17186898</a>
+            </li>
+
+            <li>
+                Kim, H。, Byun, G。, Choi, Y。, <b>Kim, S。</b>, <b>Kim, S。Y。</b>, & Lee, J。T。 (2020)。  
+                <i>Effects of long-term exposure to air pollution on all-cause mortality and cause-specific mortality in seven major cities of South Korea。</i>  
+                <b>Environmental Research, 110290。</b>  
+                <a href="https://doi.org/10.1016/j.envres.2020.110290" target="_blank">https://doi.org/10.1016/j.envres.2020.110290</a>
+            </li>
+        </ul>
+    </section>
+
+
+
+    <!-- CV -->
+    <section id="cv">
+        <h2>Curriculum Vitae</h2>
+        <p>You can download my CV here:</p>
+        <p><a href="CV_Soo-Yeon Kim_Dec2025.pdf" target="_blank">Download CV (PDF)</a></p>
+    </section>
+
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:sooyeonkim@gwu.edu">sooyeonkim@gwu.edu</a></p>
+        <p>Google Scholar: <a href="https://scholar.google.com/citations?user=ywFEkUYAAAAJ&hl=en" target="_blank">View Profile</a></p>
+        <p>GitHub: <a href="https://github.com/sooyeon-kim-29" target="_blank">github.com/sooyeon-kim-29</a></p>
+    </section>
+
+</div>
+
+
+<footer>
+    © 2025 Soo-Yeon Kim — Environmental Health Research
+</footer>
 
 </body>
 </html>
