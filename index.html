@@ -8,10 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+        :root {
+    --navy-dark: #0A1A3C;
+    --navy-medium: #1F3161;
+    --navy-accent: #3F6BAA;
+    --navy-light-bg: #F2F4F8;
+}
+        
         body {
             margin: 0;
             font-family: 'Lora', serif;
-            background: #f7f7f7;
+            background: var(--navy-light-bg);
             line-height: 1.6;
             color: #333;
         }
@@ -63,7 +70,7 @@
         }
         
         .research-photo {
-            width: 4000px;        /* adjust size */
+            width: 400px;        /* adjust size */
             height: auto;
             border-radius: 0px; 
             border: 0px solid #2a4d9b;
@@ -85,7 +92,7 @@
 
         /* Navigation Bar */
         nav {
-            background: #2a4d9b;
+            background: var(--navy-dark);
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -109,7 +116,7 @@
         }
 
         nav a:hover {
-            text-decoration: underline;
+            color: var(--navy-accent);
         }
 
         /* Layout container */
@@ -122,14 +129,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        h1, h2 {
-            color: #2a4d9b;
+        h1, h2, h3 {
+            color: var(--navy-medium);
+            font-family: 'Lora', serif;
         }
-
-        h1 {
-            margin-top: 0;
-        }
-
+        
         section {
             margin-bottom: 60px;
         }
