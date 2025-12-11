@@ -177,22 +177,19 @@
         /* =======================
            RESEARCH SECTION LAYOUT
            ======================= */
-        .research-wrapper {
-            display: flex;
-            align-items: flex-start;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
+    
 
         .research-text { flex: 1; }
 
         .research-photo {
-            width: 350px;
-            height: auto;
-            border-radius: 0px;
-            border: 0px solid var(--navy-medium);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-            object-fit: cover;
+        width: 300px;
+        height: auto;
+        float: right;                 /* image on right, text wraps around it */
+        margin-left: 25px;            /* space between text and image */
+        margin-bottom: 10px;
+        border-radius: 0px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        object-fit: cover;
         }
 
         @media (max-width: 800px) {
@@ -282,7 +279,6 @@
     <section id="research">
         <h2>Research</h2>
 
-        <div class="research-wrapper">
 
             <!-- LEFT SIDE PHOTO -->
             <img src="research_photo.jpg" alt="Research Photo" class="research-photo">
@@ -333,8 +329,6 @@
                     <li>Joint exposure modeling for extreme heat and PM₂.₅</li>
                 </ul>
             </div>
-
-        </div>
     </section>
 
 
