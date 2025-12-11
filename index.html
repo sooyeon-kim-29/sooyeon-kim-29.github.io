@@ -15,13 +15,14 @@
         }
 
         .profile-photo {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 25px auto;
-    border: 4px solid #2a4d9b;
+            width: 200px;              /* adjust size */
+            height: 200px;
+            object-fit: cover;         /* keeps proper crop */
+            border-radius: 12px;       /* slight rounding; set to 0px for perfect square */
+            display: block;
+            margin: 0 auto 25px auto;  /* center photo */
+            border: 4px solid #2a4d9b; /* frame color */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
         }
 
         /* Navigation Bar */
