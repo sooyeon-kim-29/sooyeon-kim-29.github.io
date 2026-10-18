@@ -137,6 +137,53 @@
     </div>
     © 2026 Soo-Yeon Kim
 </footer>
+<script>
+/* ---------- Weekly swim distance (from swim.json) ---------- */
+fetch('swim.json?t=' + Date.now())
+    .then(r => r.json())
+    .then(d => {
+        document.getElementById('swim-distance').textContent =
+            (d.meters / 1000).toFixed(1) + ' km';
+        document.getElementById('swim-updated').textContent = d.updated;
+    })
+    .catch(() => {});   /* if swim.json is missing, the "–" just stays */
 
+/* ---------- Photo album ---------- */
+(function () {
+    const track = document.querySelector('.album-track');
+    if (!track) return;
+    const slides = track.children;
+    const dots = document.querySelector('.album-dots');
+    let i = 0;
+
+    for (let n = 0; n < slides.length; n++) {
+        const b = document.createElement('button');
+        b.setAttribute('aria-label', 'Photo ' + (n + 1));
+        b.onclick = () => go(n);
+        dots.appendChild(b);
+    }
+
+    function go(n) {
+        i = (n + slides.length) % slides.length;   // wraps around at the ends
+        track.style.transform = 'translateX(' + (-100 * i) + '%)';
+        [...dots.children].forEach((d, k) => d.classList.toggle('active', k === i));
+    }
+
+    document.querySelector('.album-btn.prev').onclick = () => go(i - 1);
+    document.querySelector('.album-btn.next').onclick = () => go(i + 1);
+
+    /* swipe on phones */
+    let x0 = null;
+    track.addEventListener('touchstart', e => x0 = e.touches[0].clientX, {passive: true});
+    track.addEventListener('touchend', e => {
+        if (x0 === null) return;
+        const dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 40) go(dx < 0 ? i + 1 : i - 1);
+        x0 = null;
+    });
+
+    go(0);
+})();
+</script>
 </body>
 </html>
