@@ -6,6 +6,58 @@
     <title>13,000 Global Cities | Soo-Yeon Kim</title>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ---------- Multi-study project page ---------- */
+        .study-jump {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0 10px;
+        }
+        .study-jump a {
+            display: block;
+            padding: 16px 18px;
+            background: var(--navy-light-bg);
+            border-left: 4px solid var(--navy-accent);
+            text-decoration: none;
+            color: var(--text);
+            transition: background 0.2s ease;
+        }
+        .study-jump a:hover { background: #e6eaf2; color: var(--text); }
+        .study-jump .status { display: table; margin-bottom: 6px; }
+
+        .study {
+            border-top: 1px solid var(--line);
+            padding-top: 30px;
+            margin-top: 40px;
+            scroll-margin-top: 20px;
+        }
+        .study-title { margin-top: 8px; font-size: 1.3rem; }
+        .study h4 {
+            font-family: 'Lora', serif;
+            font-size: 1.05rem;
+            color: var(--navy-medium);
+            margin: 25px 0 6px;
+        }
+
+        .status {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        .status.published { background: var(--navy-medium); color: white; }
+        .status.inprep { background: #FFF3D6; color: #8A5A00; border: 1px solid #F0D9A0; }
+        .status.small { font-size: 0.62rem; padding: 2px 8px; vertical-align: middle; margin-left: 6px; }
+
+        @media (max-width: 700px) {
+            .study-jump { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
@@ -27,56 +79,128 @@
 
     <div class="breadcrumb"><a href="research.html">← All research</a></div>
 
-    <img src="joshua-rawson-harris-KRELIShKxTM-unsplash.jpg" alt="Map of air pollution across 13,000 cities worldwide" class="project-banner">
-    <p class="caption"><!-- EDIT --> Image source: https://unsplash.com/photos/fish-eye-photography-of-city-KRELIShKxTM</p>
+    <img src="joshua-rawson-harris-KRELIShKxTM-unsplash.jpg" alt="Fish-eye view of a city skyline" class="project-banner">
+    <p class="caption">Photo: Joshua Rawson-Harris on <a href="https://unsplash.com/photos/fish-eye-photography-of-city-KRELIShKxTM" target="_blank">Unsplash</a></p>
 
     <div class="project-layout">
 
         <div class="project-main">
-            <h2>Air quality, associated health burdens, and CO₂ emissions across 13,000 global cities</h2>
 
-            <h3>The question</h3>
+            <!-- ============ PROJECT INTRO ============ -->
+            <h2>Air quality, associated health burdens, and CO₂ emissions across 13,000 global cities</h2>
             <p>
                 More than half of the world's population lives in cities, where air pollution and
-                greenhouse gas emissions are concentrated. How have pollution and emissions changed in
-                urban areas worldwide over two decades, and how do a city's socioeconomic conditions
-                shape the disease burden its residents face?
+                greenhouse gas emissions are concentrated. The 13,000 Cities Project uses large
+                geospatial datasets to track air quality, emissions, and health across more than
+                13,000 urban areas worldwide. My work in this project has two parts:
             </p>
 
-            <h3>Approach</h3>
-            <p>
-                As part of the 13,000 Cities Project, I led the development of a harmonized global
-                database of PM₂.₅, NO₂, ozone, and CO₂ emissions for more than 13,000 urban areas, built
-                from large geospatial datasets, and analyzed long-term trends from 2000 to 2020.
-            </p>
-            <p>
-                In the next phase, I'm estimating city-level health burdens from PM₂.₅, NO₂, and ozone
-                using Global Burden of Disease methodologies and examining how socioeconomic factors
-                shape pollution-related inequities across regions.
-            </p>
-
-            <h3>Key findings</h3>
-            <ul class="findings">
-                <li>This was the first study summarizing city-level pollution and emissions trends worldwide from 2000 to 2020.</li>
-                <li>Ozone increased in cities globally over the study period.</li>
-                <li>Correlations among pollutants and CO₂ point to opportunities for coordinated air quality and climate policies.</li>
-                <!-- EDIT: add numbers or region-specific findings -->
-            </ul>
-            <div class="figure">
-                <a href="43247_2025_2270_Fig3_HTML.png.webp" target="_blank">
-                    <img src="43247_2025_2270_Fig3_HTML.png.webp"
-                         alt="Percent changes in PM2.5, NO2, O3 and CO2 per capita in urban areas by region, 2005–2019">
+            <div class="study-jump">
+                <a href="#study-1">
+                    <span class="status published">Published · 2025</span>
+                    <b>Study 1.</b> Two decades of urban air pollution and CO₂ trends
                 </a>
-                <p class="caption">Figure. Percent changes in population-weighted annual average PM2.5, NO2, and OSDMA8 (O3) concentrations and FFCO2 per capita in urban areas from 2005-2007 to 2017-2019. Grey lines indicate percent changes in individual cities located within each region, and navy lines indicate percent changes of averaged values across all cities in each region. Red dots indicate statistically significant monotonic trends between 2005 and 2019. Person icons indicate percent changes in total population from 2005-2007 to 2017-2019. Values above 100% were consolidated as 100%, respectively. Only urban areas with full time-series available between 2005 and 2019 for every pollutant were included. Global: n = 12,730; Central Europe, Eastern Europe, and Central Asia: n = 605; High income: n = 1,243; Latin America and Caribbean: n = 885; North Africa and Middle East: n = 1,185; South Asia: n = 3,858; Southeast Asia, East Asia, and Oceania: n = 2,789; and Sub-Saharan Africa: n = 2,165.</p>
+                <a href="#study-2">
+                    <span class="status inprep">In preparation</span>
+                    <b>Study 2.</b> Development, air pollution, and disease burden
+                </a>
             </div>
 
+            <!-- ============ STUDY 1 ============ -->
+            <div class="study" id="study-1">
+                <span class="status published">Published · 2025</span>
+                <h3 class="study-title">Study 1. Tracking air pollution and CO₂ emissions in 13,189 urban areas worldwide</h3>
+
+                <h4>The question</h4>
+                <p>
+                    How have urban air pollution and CO₂ emissions changed worldwide over two decades,
+                    and do pollutants and emissions move together?
+                </p>
+
+                <h4>Approach</h4>
+                <p>
+                    I led the development of a harmonized global database of PM₂.₅, NO₂, ozone, and
+                    fossil-fuel CO₂ emissions for 13,189 urban areas, built from large geospatial
+                    datasets, and analyzed long-term trends from 2000 to 2020.
+                </p>
+
+                <h4>Key findings</h4>
+                <ul class="findings">
+                    <li>This was the first study summarizing city-level pollution and emissions trends worldwide from 2000 to 2020.</li>
+                    <li>Ozone increased in cities globally over the study period.</li>
+                    <li>Correlations among pollutants and CO₂ point to opportunities for coordinated air quality and climate policies.</li>
+                    <!-- EDIT: add numbers or region-specific findings -->
+                </ul>
+
+                <div class="figure">
+                    <a href="43247_2025_2270_Fig3_HTML.png.webp" target="_blank">
+                        <img src="43247_2025_2270_Fig3_HTML.png.webp"
+                             alt="Percent changes in PM2.5, NO2, O3 and CO2 per capita in urban areas by region, 2005–2019">
+                    </a>
+                    <p class="caption">Figure. Percent changes in population-weighted annual average PM2.5, NO2, and OSDMA8 (O3) concentrations and FFCO2 per capita in urban areas from 2005-2007 to 2017-2019. Grey lines indicate percent changes in individual cities located within each region, and navy lines indicate percent changes of averaged values across all cities in each region. Red dots indicate statistically significant monotonic trends between 2005 and 2019. Person icons indicate percent changes in total population from 2005-2007 to 2017-2019. Values above 100% were consolidated as 100%, respectively. Only urban areas with full time-series available between 2005 and 2019 for every pollutant were included. Global: n = 12,730; Central Europe, Eastern Europe, and Central Asia: n = 605; High income: n = 1,243; Latin America and Caribbean: n = 885; North Africa and Middle East: n = 1,185; South Asia: n = 3,858; Southeast Asia, East Asia, and Oceania: n = 2,789; and Sub-Saharan Africa: n = 2,165. Adapted from Kim et al. (2025), <i>Communications Earth &amp; Environment</i>.</p>
+                </div>
+
+                <ul class="outputs">
+                    <li>
+                        <span class="kind">Peer-reviewed article</span>
+                        <b>Kim, S. Y.</b>, Kerr, G. H., van Donkelaar, A., Martin, R.V., West, J.J., Anenberg, S.C. (2025).
+                        <i>Tracking air pollution and CO₂ emissions in 13,189 urban areas worldwide using large geospatial datasets.</i>
+                        Communications Earth &amp; Environment, 6, 311.
+                        <a href="https://doi.org/10.1038/s43247-025-01486-6" target="_blank">doi</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ============ STUDY 2 ============ -->
+            <div class="study" id="study-2">
+                <span class="status inprep">In preparation</span>
+                <h3 class="study-title">Study 2. City-level development, air pollution, and pollution-related disease burdens</h3>
+
+                <h4>The question</h4>
+                <p>
+                    As cities develop, does air pollution first rise and then fall, following an
+                    environmental Kuznets curve? And how does a city's level of human development
+                    shape the disease burden its residents face from air pollution?
+                </p>
+
+                <h4>Approach</h4>
+                <p>
+                    I model the associations between the Human Development Index (HDI) and PM₂.₅,
+                    NO₂, and ozone across ~13,000 cities using Bayesian hierarchical spatial
+                    regression (R-INLA), accounting for spatial structure and country-level
+                    differences. I then estimate pollution-attributable mortality with Global Burden
+                    of Disease methods and compare current burdens with a scenario in which cities
+                    meet WHO air quality guidelines.
+                </p>
+
+                <h4>Results <span class="status inprep small">In preparation</span></h4>
+                <p>
+                    <!-- EDIT: 1–2 sentences of high-level results, e.g. the shape of the HDI–pollution relationship for each pollutant -->
+                    Results are in preparation for publication. Preliminary findings will be presented
+                    at the AGU Annual Meeting (GeoHealth section).
+                </p>
+
+                <ul class="outputs">
+                    <li>
+                        <span class="kind">Manuscript in preparation</span>
+                        <b>Kim, S. Y.</b>, Kerr, G. H., Anenberg, S. C.
+                        <i>Associations between city-level socioeconomic status and urban air pollution-related disease burdens across 13,000 cities worldwide.</i>
+                    </li>
+                    <li>
+                        <span class="kind">Conference poster</span>
+                        <!-- EDIT: poster title, meeting year and location -->
+                        AGU Annual Meeting, GeoHealth section.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ============ EXPLORE THE DATA ============ -->
             <h3>Explore the data</h3>
             <p>
                 Research outputs from the 13,000 Cities Project can be explored interactively on our
                 group's Urban Air Quality platform, which I redesigned and maintain:
                 <a href="https://urbanairquality.online" target="_blank">urbanairquality.online</a>.
             </p>
-            
             <div class="figure">
                 <a href="https://urbanairquality.online" target="_blank" class="screenshot">
                     <img src="Picture2.png"
@@ -84,37 +208,19 @@
                 </a>
                 <p class="caption">Screenshot of the Urban Air Quality platform. Click to explore the live site.</p>
             </div>
-
-            <h3>Outputs</h3>
-            <ul class="outputs">
-                <li>
-                    <span class="kind">Peer-reviewed article</span>
-                    <b>Kim, S. Y.</b>, Kerr, G. H., van Donkelaar, A., Martin, R.V., West, J.J., Anenberg, S.C. (2025).
-                    <i>Tracking air pollution and CO₂ emissions in 13,189 urban areas worldwide using large geospatial datasets.</i>
-                    Communications Earth &amp; Environment, 6, 311.
-                    <a href="https://doi.org/10.1038/s43247-025-01486-6" target="_blank">doi</a>
-                </li>
-                <li>
-                    <span class="kind">Manuscript in preparation</span>
-                    <b>Kim, S. Y.</b>, Kerr, G. H., Anenberg, S. C.
-                    <i>Associations between city-level socioeconomic status and urban air pollution-related disease burdens across 13,000 cities worldwide.</i>
-                </li>
-                <li>
-                    <span class="kind">Interactive platform</span>
-                    <a href="https://urbanairquality.online" target="_blank">urbanairquality.online</a>
-                </li>
-            </ul>
         </div>
 
         <aside class="glance">
             <h4>At a glance</h4>
             <dl>
                 <dt>Pollutants</dt><dd>PM₂.₅, NO₂, O₃, and CO₂ emissions</dd>
-                <dt>Period</dt><dd>2000–2020</dd>
-                <dt>Spatial scale</dt><dd>13,189 urban areas worldwide</dd>
-                <dt>Data</dt><dd>Large global geospatial datasets of pollutant concentrations and emissions</dd>
-                <dt>Methods</dt><dd>Trend analysis, GBD health burden estimation, socioeconomic inequality analysis</dd>
+                <dt>Spatial scale</dt><dd>~13,000 urban areas worldwide</dd>
+                <dt>Data</dt><dd>Global geospatial datasets of pollutant concentrations and emissions; Human Development Index; GBD 2021</dd>
+                <dt>Methods</dt><dd>Trend analysis, Bayesian hierarchical spatial regression, GBD health burden estimation</dd>
+                <dt>Status</dt>
+                <dd>Study 1: published (2025)<br>Study 2: in preparation</dd>
                 <dt>Collaborators</dt><dd>Gaige Kerr, Susan Anenberg, and co-authors</dd>
+                <dt>Platform</dt><dd><a href="https://urbanairquality.online" target="_blank">urbanairquality.online</a></dd>
             </dl>
         </aside>
 
