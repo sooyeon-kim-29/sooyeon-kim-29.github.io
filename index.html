@@ -143,7 +143,7 @@
 </footer>
 <script>
 /* ---------- Weekly swim distance (from swim.json) ---------- */
-fetch('swim.json?t=' + Date.now())
+fetch('https://raw.githubusercontent.com/sooyeon-kim-29/sooyeon-kim-29.github.io/main/swim.json?t=' + Date.now())
     .then(r => r.json())
     .then(d => {
         document.getElementById('swim-distance').textContent =
